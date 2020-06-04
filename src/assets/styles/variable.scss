@@ -1,0 +1,45 @@
+@charset "utf-8";
+@mixin border-top-1px($col) {
+  position: relative;
+  &::before {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    content: '';
+    display: block;
+    width: 100%;
+    border-top: 1px solid $col;
+  }
+}
+
+@mixin border-bottom-1px($col) {
+  position: relative;
+  &::after {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    content: '';
+    display: block;
+    width: 100%;
+    border-top: 1px solid $col;
+  }
+}
+
+
+@media (-webkit-device-pixel-ratio: 1.5), (device-pixel-ratio: 1.5) {
+  .border-top-1px,
+  .border-bottom-1px {
+    &::after {
+      transform: scale(0.7);
+    }
+  }
+}
+
+@media (-webkit-device-pixel-ratio: 2), (device-pixel-ratio: 2) {
+  .border-top-1px,
+  .border-bottom-1px {
+    &::after {
+      transform: scale(0.5);
+    }
+  }
+}

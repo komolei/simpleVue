@@ -1,0 +1,1 @@
+/* eslint-disable */ module.exports= { example: { index: 'src/pages/example/index.js' } }
